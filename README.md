@@ -1,3 +1,48 @@
-if you want to see the scrap title body and link then write the python file name and then the link you want to see . and when you want to calculate the hamming distance then you have to same format as early then add one more link so it will check the hamming between this.
-exaple format for scrapping - python try.py <url> and for use - python try.py https://www.wikipedia.org
-calculate for hamming distance -python try.py <url1> <url2> and for use - python try.py https://www.wikipedia.org https://example.com
+
+
+##  How to Use
+
+## Scrape One Webpage
+
+**Format:**
+
+```bash
+python try.py <url>
+```
+
+**Example:**
+
+```bash
+python try.py https://www.wikipedia.org
+```
+
+---
+
+###  Compare Two Webpages
+
+**Format:**
+
+```bash
+python try.py <url1> <url2>
+```
+
+**Example:**
+
+```bash
+python try.py https://www.wikipedia.org https://example.com
+```
+
+---
+
+##  What You Learn From This
+
+* Web scraping
+* Text cleaning
+* SimHash algorithm
+* Hamming distance
+* Checking webpage similarity
+
+---
+
+```
+```
