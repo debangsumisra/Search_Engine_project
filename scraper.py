@@ -71,10 +71,19 @@ def get_fingerprint(text):
             f2.append(0)
 
     return f2
+def add_http(url):
+    if url.startswith("http://"):
+        return url
+    elif url.startswith("https://"):
+        return url
+    else:
+        new_url = "https://" + url
+        return new_url
 
 
 
 def search(url):
+    url=add_http(url)
    
     headers = {"User-Agent": "Mozilla/5.0"}
     res = requests.get(url, headers=headers)
@@ -92,7 +101,7 @@ def search(url):
 
         clean = soup.get_text(" ", strip=True)
         print(clean_text(clean))
-        print(get_fingerprint(clean_text(clean)))
+        
     else:
         print("No body text found")
 
@@ -106,6 +115,7 @@ def search(url):
 
 
 def fingerprint(url):
+    url=add_http(url)
     headers = {"User-Agent": "Mozilla/5.0"}
     res = requests.get(url, headers=headers)
     soup = BeautifulSoup(res.text, 'html.parser')
@@ -141,5 +151,5 @@ elif len(args) == 3:
     chaeck_sim(args[1], args[2])
 
 else:
-    print("write the url in command line argument like this : python search.py <url> or python search.py <url1> <url2>")
+    print("write the url in command line argument like this : python scraper.py <url> or python scraper.py <url1> <url2>")
 
